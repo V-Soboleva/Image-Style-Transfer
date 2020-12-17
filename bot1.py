@@ -11,12 +11,12 @@ def image_to_byte_array(image:Image):
   return imgByteArr
 
 bot = telebot.TeleBot('1200755615:AAHs_ArTkrn-NXJ7TJIVb94TRLPqjr3RRXU');
+keyboard1 = telebot.types.ReplyKeyboardMarkup()
+keyboard1.row('english', 'russian')
 
 @bot.message_handler(content_types=['text', 'photo'])
 def start(message):
     if message.text == '/start':
-        keyboard1 = telebot.types.ReplyKeyboardMarkup()
-        keyboard1.row('english', 'russian')
         bot.send_message(message.from_user.id, "Please, choose language./Пожалуйста, выберите язык.", reply_markup = keyboard1);
         bot.register_next_step_handler(message, choose_lang); #следующий шаг – функция get_content
     else:
