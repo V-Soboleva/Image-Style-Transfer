@@ -10,7 +10,7 @@ def image_to_byte_array(image:Image):
   imgByteArr = imgByteArr.getvalue()
   return imgByteArr
 
-bot = telebot.TeleBot('1200755615:AAHs_ArTkrn-NXJ7TJIVb94TRLPqjr3RRXU');
+bot = telebot.TeleBot(####);
 keyboard1 = telebot.types.ReplyKeyboardMarkup()
 keyboard1.row('english', 'russian')
 
